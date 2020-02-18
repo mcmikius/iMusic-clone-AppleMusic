@@ -17,6 +17,7 @@
 		F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F3E73BEE23FC0522003A90F6 /* Alamofire */; };
 		F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */; };
 		F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF423FC0DE7003A90F6 /* Track.swift */; };
+		F3E73BF723FC1348003A90F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF623FC1348003A90F6 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F3E73BF423FC0DE7003A90F6 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		F3E73BF623FC1348003A90F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				F3E73BD323FBF967003A90F6 /* AppDelegate.swift */,
 				F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */,
+				F3E73BF623FC1348003A90F6 /* NetworkService.swift */,
 				F3E73BF123FC0D7D003A90F6 /* Controllers */,
 				F3E73BF023FC0D6A003A90F6 /* Models */,
 				F3E73BDC23FBF968003A90F6 /* Assets.xcassets */,
@@ -172,6 +175,7 @@
 			files = (
 				F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */,
 				F3E73BEA23FBFBBE003A90F6 /* SearchViewController.swift in Sources */,
+				F3E73BF723FC1348003A90F6 /* NetworkService.swift in Sources */,
 				F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */,
 				F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */,
 				F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */,
