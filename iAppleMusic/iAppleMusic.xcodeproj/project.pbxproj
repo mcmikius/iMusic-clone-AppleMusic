@@ -14,6 +14,7 @@
 		F3E73BE023FBF968003A90F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E73BDE23FBF968003A90F6 /* LaunchScreen.storyboard */; };
 		F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */; };
 		F3E73BEA23FBFBBE003A90F6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */; };
+		F3E73BEC23FC011D003A90F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BEB23FC011D003A90F6 /* TrackModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F3E73BE123FBF968003A90F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F3E73BEB23FC011D003A90F6 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */,
 				F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */,
 				F3E73BD723FBF967003A90F6 /* ViewController.swift */,
+				F3E73BEB23FC011D003A90F6 /* TrackModel.swift */,
 				F3E73BDC23FBF968003A90F6 /* Assets.xcassets */,
 				F3E73BDE23FBF968003A90F6 /* LaunchScreen.storyboard */,
 				F3E73BE123FBF968003A90F6 /* Info.plist */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E73BEA23FBFBBE003A90F6 /* SearchViewController.swift in Sources */,
+				F3E73BEC23FC011D003A90F6 /* TrackModel.swift in Sources */,
 				F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */,
 				F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */,
 				F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */,
