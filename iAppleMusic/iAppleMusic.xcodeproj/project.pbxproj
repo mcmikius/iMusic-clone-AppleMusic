@@ -15,6 +15,8 @@
 		F32D485423FC184F00C388E4 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D484D23FC184F00C388E4 /* SearchInteractor.swift */; };
 		F32D485823FC194900C388E4 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32D485723FC194900C388E4 /* SearchViewController.storyboard */; };
 		F32D485A23FC1B6700C388E4 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D485923FC1B6700C388E4 /* UIViewController+Storyboard.swift */; };
+		F32D485E23FC28BF00C388E4 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32D485D23FC28BF00C388E4 /* TrackCell.xib */; };
+		F32D486023FC28D500C388E4 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D485F23FC28D500C388E4 /* TrackCell.swift */; };
 		F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD323FBF967003A90F6 /* AppDelegate.swift */; };
 		F3E73BD623FBF967003A90F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */; };
 		F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD723FBF967003A90F6 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		F32D484D23FC184F00C388E4 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		F32D485723FC194900C388E4 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		F32D485923FC1B6700C388E4 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		F32D485D23FC28BF00C388E4 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		F32D485F23FC28D500C388E4 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		F3E73BD023FBF967003A90F6 /* iAppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E73BD323FBF967003A90F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		F32D485623FC185B00C388E4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F32D485C23FC28AE00C388E4 /* Cell */,
 				F32D485723FC194900C388E4 /* SearchViewController.storyboard */,
 				F32D484C23FC184F00C388E4 /* SearchViewController.swift */,
 				F32D484D23FC184F00C388E4 /* SearchInteractor.swift */,
@@ -91,6 +96,15 @@
 				F32D485923FC1B6700C388E4 /* UIViewController+Storyboard.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F32D485C23FC28AE00C388E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F32D485D23FC28BF00C388E4 /* TrackCell.xib */,
+				F32D485F23FC28D500C388E4 /* TrackCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F3E73BC723FBF967003A90F6 = {
@@ -212,6 +226,7 @@
 				F3E73BE023FBF968003A90F6 /* LaunchScreen.storyboard in Resources */,
 				F3E73BDD23FBF968003A90F6 /* Assets.xcassets in Resources */,
 				F32D485823FC194900C388E4 /* SearchViewController.storyboard in Resources */,
+				F32D485E23FC28BF00C388E4 /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +252,7 @@
 				F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */,
 				F3E73BD623FBF967003A90F6 /* SceneDelegate.swift in Sources */,
 				F32D485223FC184F00C388E4 /* SearchModels.swift in Sources */,
+				F32D486023FC28D500C388E4 /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
