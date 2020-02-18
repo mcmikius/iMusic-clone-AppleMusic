@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F32B634023FC30730096385A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F32B633F23FC30730096385A /* SDWebImage */; };
+		F32B634223FC30730096385A /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F32B634123FC30730096385A /* SDWebImageMapKit */; };
 		F32D484F23FC184F00C388E4 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D484823FC184F00C388E4 /* SearchPresenter.swift */; };
 		F32D485023FC184F00C388E4 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D484923FC184F00C388E4 /* SearchWorker.swift */; };
 		F32D485123FC184F00C388E4 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D484A23FC184F00C388E4 /* SearchRouter.swift */; };
@@ -60,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32B634023FC30730096385A /* SDWebImage in Frameworks */,
+				F32B634223FC30730096385A /* SDWebImageMapKit in Frameworks */,
 				F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +181,8 @@
 			name = iAppleMusic;
 			packageProductDependencies = (
 				F3E73BEE23FC0522003A90F6 /* Alamofire */,
+				F32B633F23FC30730096385A /* SDWebImage */,
+				F32B634123FC30730096385A /* SDWebImageMapKit */,
 			);
 			productName = iAppleMusic;
 			productReference = F3E73BD023FBF967003A90F6 /* iAppleMusic.app */;
@@ -208,6 +214,7 @@
 			mainGroup = F3E73BC723FBF967003A90F6;
 			packageReferences = (
 				F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = F3E73BD123FBF967003A90F6 /* Products */;
 			projectDirPath = "";
@@ -444,6 +451,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.5.2;
+			};
+		};
 		F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -455,6 +470,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F32B633F23FC30730096385A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		F32B634123FC30730096385A /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		F3E73BEE23FC0522003A90F6 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */;
