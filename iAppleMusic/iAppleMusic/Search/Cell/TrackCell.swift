@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol TrackCellViewModel {
+    var iconUrlString: String? { get }
+    var trackName: String { get }
+    var artistName: String { get }
+    var collectionName: String? { get }
+}
+
 class TrackCell: UITableViewCell {
     
     static let reuseId = "TrackCell"
@@ -21,5 +28,9 @@ class TrackCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func set
+    func set(viewModel: TrackCellViewModel) {
+        trackNameLabel.text = viewModel.trackName
+        artistNameLabel.text = viewModel.artistName
+        collectionNameLabel.text = viewModel.collectionName
+    }
 }

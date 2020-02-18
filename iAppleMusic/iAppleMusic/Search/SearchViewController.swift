@@ -86,9 +86,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
         let cellViewModel = searchViewModel.cells[indexPath.row]
         cell.trackImageView.backgroundColor = .lightGray
-//        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
-//        cell.textLabel?.numberOfLines = 2
-//        cell.imageView?.image = UIImage(named: "pic0")
+        cell.set(viewModel: cellViewModel)
         return cell
     }
     
