@@ -18,6 +18,7 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [generateViewController(rootViewController: SearchViewController(), image: UIImage(named: "search")!, title: "Search"), generateViewController(rootViewController: ViewController(), image: UIImage(named: "library")!, title: "Library")]
     }
+    
     private func generateViewController(rootViewController: UIViewController, image: UIImage, title: String) -> UIViewController {
         let navigationViewController = UINavigationController(rootViewController: rootViewController)
         navigationViewController.tabBarItem.image = image
