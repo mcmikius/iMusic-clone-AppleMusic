@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    let tracks = [TrackModel(trackName: "bad guy", artistName: "Billie Eilish"), TrackModel(trackName: "Help!", artistName: "theBeatles")]
+    let tracks = [TrackModel(trackName: "bad guy", artistName: "Billie Eilish"), TrackModel(trackName: "Help!", artistName: "the Beatles")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,18 @@ class SearchViewController: UITableViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        
+        let url = "https://itunes.apple.com/search?term=\(searchText)"
+        AF.request(url).responseData { (dataResponse) in
+            if let error = dataResponse.error {
+                print("Error received requesing data: \(error.localizedDescription)")
+                return
+            }
+            guard let data = dataResponse.data else {
+                return
+            }
+            let someString = String(data: data, encoding: .utf8)
+            print(someString ?? "")
+        }
     }
 }

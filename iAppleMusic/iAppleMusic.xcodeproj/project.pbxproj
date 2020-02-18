@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */; };
 		F3E73BEA23FBFBBE003A90F6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */; };
 		F3E73BEC23FC011D003A90F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BEB23FC011D003A90F6 /* TrackModel.swift */; };
+		F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F3E73BEE23FC0522003A90F6 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = iAppleMusic;
+			packageProductDependencies = (
+				F3E73BEE23FC0522003A90F6 /* Alamofire */,
+			);
 			productName = iAppleMusic;
 			productReference = F3E73BD023FBF967003A90F6 /* iAppleMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = F3E73BC723FBF967003A90F6;
+			packageReferences = (
+				F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = F3E73BD123FBF967003A90F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +346,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3E73BEE23FC0522003A90F6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3E73BC823FBF967003A90F6 /* Project object */;
 }
