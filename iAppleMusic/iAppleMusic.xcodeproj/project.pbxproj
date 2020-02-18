@@ -14,7 +14,6 @@
 		F3E73BE023FBF968003A90F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E73BDE23FBF968003A90F6 /* LaunchScreen.storyboard */; };
 		F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */; };
 		F3E73BEA23FBFBBE003A90F6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */; };
-		F3E73BEC23FC011D003A90F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BEB23FC011D003A90F6 /* TrackModel.swift */; };
 		F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F3E73BEE23FC0522003A90F6 /* Alamofire */; };
 		F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */; };
 		F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF423FC0DE7003A90F6 /* Track.swift */; };
@@ -30,7 +29,6 @@
 		F3E73BE123FBF968003A90F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F3E73BE923FBFBBE003A90F6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		F3E73BEB23FC011D003A90F6 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F3E73BF423FC0DE7003A90F6 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +78,6 @@
 		F3E73BF023FC0D6A003A90F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3E73BEB23FC011D003A90F6 /* TrackModel.swift */,
 				F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */,
 				F3E73BF423FC0DE7003A90F6 /* Track.swift */,
 			);
@@ -175,7 +172,6 @@
 			files = (
 				F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */,
 				F3E73BEA23FBFBBE003A90F6 /* SearchViewController.swift in Sources */,
-				F3E73BEC23FC011D003A90F6 /* TrackModel.swift in Sources */,
 				F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */,
 				F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */,
 				F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */,

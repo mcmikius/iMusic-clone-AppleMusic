@@ -10,10 +10,10 @@ import UIKit
 import Alamofire
 
 class SearchViewController: UITableViewController {
-    
+    private var timer: Timer?
     let searchController = UISearchController(searchResultsController: nil)
     
-    let tracks = [TrackModel(trackName: "bad guy", artistName: "Billie Eilish"), TrackModel(trackName: "Help!", artistName: "the Beatles")]
+    var tracks = [Track]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,19 +44,30 @@ class SearchViewController: UITableViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        let url = "https://itunes.apple.com/search?term=\(searchText)"
-        AF.request(url).responseData { (dataResponse) in
-            if let error = dataResponse.error {
-                print("Error received requesing data: \(error.localizedDescription)")
-                return
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
+            let url = "https://itunes.apple.com/search"
+            let parametrs = ["term":"\(searchText)", "limit":"10"]
+            AF.request(url, method: .get, parameters: parametrs, encoding: URLEncoding.default, headers: nil).responseData { (dataResponse) in
+                if let error = dataResponse.error {
+                    print("Error received requesing data: \(error.localizedDescription)")
+                    return
+                }
+                guard let data = dataResponse.data else {
+                    return
+                }
+                let decoder = JSONDecoder()
+                do {
+                    let objects = try decoder.decode(SearchResponse.self, from: data)
+                    print("objects: ", objects)
+                    self.tracks = objects.results
+                    self.tableView.reloadData()
+                } catch let jsonError {
+                    print("Failed to decode JSON", jsonError)
+                }
             }
-            guard let data = dataResponse.data else {
-                return
-            }
-            let someString = String(data: data, encoding: .utf8)
-            print(someString ?? "")
-        }
+        })
     }
 }
