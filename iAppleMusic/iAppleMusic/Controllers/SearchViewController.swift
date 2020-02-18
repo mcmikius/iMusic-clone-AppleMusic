@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 class SearchViewController: UITableViewController {
+    
     var networkService = NetworkService()
     private var timer: Timer?
     let searchController = UISearchController(searchResultsController: nil)
