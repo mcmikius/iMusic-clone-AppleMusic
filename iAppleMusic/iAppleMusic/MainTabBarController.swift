@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol MainTabBarControllerDelegate: class {
     func minimizedTrackDetailController()
@@ -30,8 +31,12 @@ class MainTabBarController: UITabBarController {
         setupTrackDetailView()
         searchViewController.tabBarDelegate = self
         
+        let library = LibraryView()
+        let hostVC = UIHostingController(rootView: library)
+        hostVC.tabBarItem.image = #imageLiteral(resourceName: "library")
+        hostVC.tabBarItem.title = "Library"
         
-        viewControllers = [generateViewController(rootViewController: searchViewController, image: UIImage(named: "search")!, title: "Search"), generateViewController(rootViewController: ViewController(), image: UIImage(named: "library")!, title: "Library")]
+        viewControllers = [hostVC, generateViewController(rootViewController: searchViewController, image: UIImage(named: "search")!, title: "Search")]
     }
     
     private func generateViewController(rootViewController: UIViewController, image: UIImage, title: String) -> UIViewController {
