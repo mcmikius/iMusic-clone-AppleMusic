@@ -23,6 +23,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private var searchViewModel = SearchViewModel.init(cells: [])
     private var timer: Timer?
     lazy private var footerView = FooterView()
+    weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     // MARK: Setup
     
@@ -95,12 +96,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         
-        // 'keyWindow' was deprecated in iOS 13.0: Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes
-        let window = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive}).map({$0 as? UIWindowScene}).compactMap({$0}).first?.windows.filter({$0.isKeyWindow}).first
-        let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
-        trackDetailsView.set(viewModel: cellViewModel)
-        trackDetailsView.delegate = self
-        window?.addSubview(trackDetailsView)
+        self.tabBarDelegate?.maximizedTrackDetailController(viewModel: cellViewModel)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

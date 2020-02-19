@@ -10,9 +10,17 @@ import UIKit
 
 protocol MainTabBarControllerDelegate: class {
     func minimizedTrackDetailController()
+    func maximizedTrackDetailController(viewModel: SearchViewModel.Cell?)
 }
 
 class MainTabBarController: UITabBarController {
+    
+    let searchViewController: SearchViewController = SearchViewController.loadFromStoryboard()
+    
+    private var minimizedTopAnchorContraint: NSLayoutConstraint!
+    private var maximizedTopAnchorContraint: NSLayoutConstraint!
+    private var bottomAnchorContraint: NSLayoutConstraint!
+    let trackDetailView: TrackDetailView = TrackDetailView.loadFromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +28,8 @@ class MainTabBarController: UITabBarController {
         view.backgroundColor = .systemBackground
         tabBar.tintColor = .systemPink
         setupTrackDetailView()
+        searchViewController.tabBarDelegate = self
         
-        let searchViewController: SearchViewController = SearchViewController.loadFromStoryboard()
         
         viewControllers = [generateViewController(rootViewController: searchViewController, image: UIImage(named: "search")!, title: "Search"), generateViewController(rootViewController: ViewController(), image: UIImage(named: "library")!, title: "Library")]
     }
@@ -35,22 +43,23 @@ class MainTabBarController: UITabBarController {
         return navigationViewController
     }
     
-    private var minimizedTopAnchorContraint: NSLayoutConstraint!
-    private var maximizedTopAnchorContraint: NSLayoutConstraint!
+    
+
     
     private func setupTrackDetailView() {
-        let trackDetailView: TrackDetailView = TrackDetailView.loadFromNib()
+        
         trackDetailView.tabBarDelegate = self
+        trackDetailView.delegate = searchViewController
         view.insertSubview(trackDetailView, belowSubview: tabBar)
         
         trackDetailView.translatesAutoresizingMaskIntoConstraints = false
         
-        maximizedTopAnchorContraint = trackDetailView.topAnchor.constraint(equalTo: view.topAnchor)
+        maximizedTopAnchorContraint = trackDetailView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height)
         minimizedTopAnchorContraint = trackDetailView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
-        
+        bottomAnchorContraint = trackDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.height)
+        bottomAnchorContraint.isActive = true
         maximizedTopAnchorContraint.isActive = true
         
-        trackDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         trackDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         trackDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         
@@ -60,12 +69,28 @@ class MainTabBarController: UITabBarController {
 
 extension MainTabBarController: MainTabBarControllerDelegate {
     
+    func maximizedTrackDetailController(viewModel: SearchViewModel.Cell?) {
+        maximizedTopAnchorContraint.isActive = true
+        minimizedTopAnchorContraint.isActive = false
+        maximizedTopAnchorContraint.constant = 0
+        bottomAnchorContraint.constant = 0
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+            self.tabBar.alpha = 0
+        }, completion: nil)
+        guard let viewModel = viewModel else {
+            return
+        }
+        self.trackDetailView.set(viewModel: viewModel)
+    }
     
     func minimizedTrackDetailController() {
         maximizedTopAnchorContraint.isActive = false
+        bottomAnchorContraint.constant = view.frame.height
         minimizedTopAnchorContraint.isActive = true
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
+            self.tabBar.alpha = 1
         }, completion: nil)
     }
     
