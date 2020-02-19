@@ -16,6 +16,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2A-lo-hjJ">
                     <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                     <subviews>
+                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dS7-Uw-x3e">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="8Fc-54-gux"/>
+                            </constraints>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Lgr-7I-MLg">
                             <rect key="frame" x="8" y="8" width="398" height="48"/>
                             <subviews>
@@ -38,6 +45,9 @@
                                     </constraints>
                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <state key="normal" image="pause"/>
+                                    <connections>
+                                        <action selector="playPauseAction:" destination="bfj-kq-6lr" eventType="touchUpInside" id="JTk-j9-T19"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTU-aK-DkJ">
                                     <rect key="frame" x="350" y="0.0" width="48" height="48"/>
@@ -46,16 +56,22 @@
                                     </constraints>
                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <state key="normal" image="Right"/>
+                                    <connections>
+                                        <action selector="nextTrack:" destination="bfj-kq-6lr" eventType="touchUpInside" id="Vkk-XB-0Sj"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="6fu-fH-9Mr"/>
                         <constraint firstAttribute="bottom" secondItem="Lgr-7I-MLg" secondAttribute="bottom" constant="8" id="ChB-Ok-Rbi"/>
                         <constraint firstItem="Lgr-7I-MLg" firstAttribute="leading" secondItem="t2A-lo-hjJ" secondAttribute="leading" constant="8" id="GZe-hI-O0c"/>
+                        <constraint firstItem="dS7-Uw-x3e" firstAttribute="top" secondItem="t2A-lo-hjJ" secondAttribute="top" id="Guq-sN-yS3"/>
+                        <constraint firstItem="dS7-Uw-x3e" firstAttribute="leading" secondItem="t2A-lo-hjJ" secondAttribute="leading" id="Qfb-pt-FcD"/>
                         <constraint firstItem="Lgr-7I-MLg" firstAttribute="top" secondItem="t2A-lo-hjJ" secondAttribute="top" constant="8" id="dll-Vp-m62"/>
+                        <constraint firstAttribute="trailing" secondItem="dS7-Uw-x3e" secondAttribute="trailing" id="mG0-lD-rCT"/>
                         <constraint firstAttribute="trailing" secondItem="Lgr-7I-MLg" secondAttribute="trailing" constant="8" id="rao-XT-sMl"/>
                     </constraints>
                 </view>
@@ -196,6 +212,12 @@
                 <outlet property="currentTimeLabel" destination="e1L-sY-qDE" id="Lr9-Tt-Qru"/>
                 <outlet property="currentTimeSlider" destination="QlN-1s-CEu" id="0mM-Wt-yNw"/>
                 <outlet property="durationTimeLabel" destination="AO9-Be-qeY" id="ffl-6C-AmK"/>
+                <outlet property="maximizedStackView" destination="kke-k8-Byt" id="mmp-yf-aoj"/>
+                <outlet property="miniGoForwardButton" destination="QTU-aK-DkJ" id="qff-ZZ-nJo"/>
+                <outlet property="miniPlayPauseButton" destination="0Gm-So-Ef0" id="7LD-T6-hcg"/>
+                <outlet property="miniTrackImageView" destination="ESP-86-VQP" id="cC6-3g-lqY"/>
+                <outlet property="miniTrackTitleLabel" destination="vn2-7m-OjU" id="r6Y-Da-Ccs"/>
+                <outlet property="miniTrackView" destination="t2A-lo-hjJ" id="zvb-Sv-POW"/>
                 <outlet property="playPauseButton" destination="HVl-cw-4hi" id="umv-gn-WWm"/>
                 <outlet property="trackImageView" destination="UjU-Qg-m49" id="h1a-AY-GNs"/>
                 <outlet property="trackTitleLabel" destination="v0j-Pv-Zl6" id="6x3-ef-O2E"/>
