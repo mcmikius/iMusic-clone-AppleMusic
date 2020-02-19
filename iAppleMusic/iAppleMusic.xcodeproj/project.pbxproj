@@ -23,6 +23,7 @@
 		F32EED6623FD4E1400D3C1AE /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32EED6523FD4E1400D3C1AE /* TrackDetailView.xib */; };
 		F32EED6823FD4E1E00D3C1AE /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */; };
 		F3DDB74B23FD6B6300E3453D /* CMTime+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DDB74A23FD6B6300E3453D /* CMTime+extension.swift */; };
+		F3DDB74D23FD76E300E3453D /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DDB74C23FD76E300E3453D /* Nib.swift */; };
 		F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD323FBF967003A90F6 /* AppDelegate.swift */; };
 		F3E73BD623FBF967003A90F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */; };
 		F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD723FBF967003A90F6 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		F32EED6523FD4E1400D3C1AE /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		F3DDB74A23FD6B6300E3453D /* CMTime+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+extension.swift"; sourceTree = "<group>"; };
+		F3DDB74C23FD76E300E3453D /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		F3E73BD023FBF967003A90F6 /* iAppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E73BD323FBF967003A90F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				F32D485923FC1B6700C388E4 /* UIViewController+Storyboard.swift */,
 				F3DDB74A23FD6B6300E3453D /* CMTime+extension.swift */,
+				F3DDB74C23FD76E300E3453D /* Nib.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */,
+				F3DDB74D23FD76E300E3453D /* Nib.swift in Sources */,
 				F32D485023FC184F00C388E4 /* SearchWorker.swift in Sources */,
 				F32D485123FC184F00C388E4 /* SearchRouter.swift in Sources */,
 				F3E73BEA23FBFBBE003A90F6 /* SearchMusicViewController.swift in Sources */,

@@ -15,6 +15,7 @@ class MainTabBarController: UITabBarController {
         
         view.backgroundColor = .systemBackground
         tabBar.tintColor = .systemPink
+        setupTrackDetailView()
         
         let searchViewController: SearchViewController = SearchViewController.loadFromStoryboard()
         
@@ -28,5 +29,10 @@ class MainTabBarController: UITabBarController {
         rootViewController.navigationItem.title = title
         navigationViewController.navigationBar.prefersLargeTitles = true
         return navigationViewController
+    }
+    
+    private func setupTrackDetailView() {
+        let trackDetailView: TrackDetailView = TrackDetailView.loadFromNib()
+        view.insertSubview(trackDetailView, belowSubview: tabBar)
     }
 }
