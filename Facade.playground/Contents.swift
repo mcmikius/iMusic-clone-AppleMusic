@@ -24,3 +24,23 @@ class BreadShop {
         return "bread"
     }
 }
+
+class Supermarket {
+    private let fruitShop = FruitShop()
+    private let meatShop = MeatShop()
+    private let milkShop = MilkShop()
+    private let sweetShop = SweetShop()
+    private let breadShop = BreadShop()
+    func buyProducts() -> String {
+        var products = ""
+        products += fruitShop.buyFruits() + ", "
+        products += meatShop.buyMeat() + ", "
+        products += milkShop.buyMilk() + ", "
+        products += sweetShop.buySweets() + ", "
+        products += breadShop.buyBread()
+        return "I bought: " + products
+    }
+}
+
+let supermarket = Supermarket()
+supermarket.buyProducts()
