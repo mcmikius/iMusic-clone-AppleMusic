@@ -85,6 +85,7 @@ class TrackDetailView: UIView {
         
         miniTrackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapMaximized)))
         miniTrackView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismissalPan)))
     }
     
     @objc private func handleTapMaximized() {
@@ -99,6 +100,12 @@ class TrackDetailView: UIView {
             handlePanChanged(gesture: gesture)
         case .ended:
             handlePanEnded(gesture: gesture)
+        case .possible:
+            print("possible")
+        case .cancelled:
+            print("cancelled")
+        case .failed:
+            print("failed")
         @unknown default:
             print("unknown default")
         }
@@ -125,6 +132,33 @@ class TrackDetailView: UIView {
                 self.maximizedStackView.alpha = 0
             }
         }, completion: nil)
+    }
+    
+    @objc private func handleDismissalPan(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+            
+        case .possible:
+            print("possible")
+        case .began:
+            print("began")
+        case .changed:
+            let translation = gesture.translation(in: self.superview)
+            maximizedStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+        case .ended:
+            let translation = gesture.translation(in: self.superview)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                self.maximizedStackView.transform = .identity
+                if translation.y > 50 {
+                    self.tabBarDelegate?.minimizedTrackDetailController()
+                }
+            }, completion: nil)
+        case .cancelled:
+            print("cancelled")
+        case .failed:
+            print("failed")
+        @unknown default:
+            print("unknown default")
+        }
     }
     
     //MARK: - Time setup
