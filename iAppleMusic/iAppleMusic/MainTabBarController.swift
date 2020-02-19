@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MainTabBarControllerDelegate: class {
+    func minimizedTrackDetailController()
+}
+
 class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
@@ -31,8 +35,39 @@ class MainTabBarController: UITabBarController {
         return navigationViewController
     }
     
+    private var minimizedTopAnchorContraint: NSLayoutConstraint!
+    private var maximizedTopAnchorContraint: NSLayoutConstraint!
+    
     private func setupTrackDetailView() {
         let trackDetailView: TrackDetailView = TrackDetailView.loadFromNib()
+        trackDetailView.tabBarDelegate = self
         view.insertSubview(trackDetailView, belowSubview: tabBar)
+        
+        trackDetailView.translatesAutoresizingMaskIntoConstraints = false
+        
+        maximizedTopAnchorContraint = trackDetailView.topAnchor.constraint(equalTo: view.topAnchor)
+        minimizedTopAnchorContraint = trackDetailView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
+        
+        maximizedTopAnchorContraint.isActive = true
+        
+        trackDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        trackDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        trackDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+        
     }
+}
+
+extension MainTabBarController: MainTabBarControllerDelegate {
+    
+    
+    func minimizedTrackDetailController() {
+        maximizedTopAnchorContraint.isActive = false
+        minimizedTopAnchorContraint.isActive = true
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    
 }
