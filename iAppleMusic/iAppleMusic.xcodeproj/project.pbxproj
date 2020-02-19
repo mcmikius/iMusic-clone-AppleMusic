@@ -20,6 +20,8 @@
 		F32D485E23FC28BF00C388E4 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32D485D23FC28BF00C388E4 /* TrackCell.xib */; };
 		F32D486023FC28D500C388E4 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D485F23FC28D500C388E4 /* TrackCell.swift */; };
 		F32EED6323FD473200D3C1AE /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EED6223FD473200D3C1AE /* FooterView.swift */; };
+		F32EED6623FD4E1400D3C1AE /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32EED6523FD4E1400D3C1AE /* TrackDetailView.xib */; };
+		F32EED6823FD4E1E00D3C1AE /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */; };
 		F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD323FBF967003A90F6 /* AppDelegate.swift */; };
 		F3E73BD623FBF967003A90F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */; };
 		F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD723FBF967003A90F6 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		F32D485D23FC28BF00C388E4 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		F32D485F23FC28D500C388E4 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		F32EED6223FD473200D3C1AE /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		F32EED6523FD4E1400D3C1AE /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
+		F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		F3E73BD023FBF967003A90F6 /* iAppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E73BD323FBF967003A90F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 		F32D485623FC185B00C388E4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F32EED6423FD4DEB00D3C1AE /* TrackDetailView */,
 				F32EED6123FD472100D3C1AE /* FooterView */,
 				F32D485C23FC28AE00C388E4 /* Cell */,
 				F32D485723FC194900C388E4 /* SearchViewController.storyboard */,
@@ -120,6 +125,15 @@
 				F32EED6223FD473200D3C1AE /* FooterView.swift */,
 			);
 			path = FooterView;
+			sourceTree = "<group>";
+		};
+		F32EED6423FD4DEB00D3C1AE /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				F32EED6523FD4E1400D3C1AE /* TrackDetailView.xib */,
+				F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */,
+			);
+			path = TrackDetailView;
 			sourceTree = "<group>";
 		};
 		F3E73BC723FBF967003A90F6 = {
@@ -245,6 +259,7 @@
 				F3E73BDD23FBF968003A90F6 /* Assets.xcassets in Resources */,
 				F32D485823FC194900C388E4 /* SearchViewController.storyboard in Resources */,
 				F32D485E23FC28BF00C388E4 /* TrackCell.xib in Resources */,
+				F32EED6623FD4E1400D3C1AE /* TrackDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +279,7 @@
 				F32D485423FC184F00C388E4 /* SearchInteractor.swift in Sources */,
 				F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */,
 				F32D485A23FC1B6700C388E4 /* UIViewController+Storyboard.swift in Sources */,
+				F32EED6823FD4E1E00D3C1AE /* TrackDetailView.swift in Sources */,
 				F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */,
 				F32D485323FC184F00C388E4 /* SearchViewController.swift in Sources */,
 				F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */,
