@@ -41,7 +41,6 @@ class TrackDetailView: UIView {
         let scale: CGFloat = 0.8
         trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         trackImageView.layer.cornerRadius = 5
-        trackImageView.backgroundColor = .red
     }
     
     //MARK: - Setup
@@ -51,6 +50,7 @@ class TrackDetailView: UIView {
         playTrack(previewUrl: viewModel.previewUrl)
         monitorStartTime()
         observePlayerCurrentTime()
+        playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else {
             return
