@@ -24,15 +24,21 @@
 		F32EED6823FD4E1E00D3C1AE /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */; };
 		F3D9367C23FDAC94000F6B8E /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9367B23FDAC94000F6B8E /* LibraryView.swift */; };
 		F3D9367E23FDB0EB000F6B8E /* LibraryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9367D23FDB0EB000F6B8E /* LibraryRowView.swift */; };
+		F3D9368023FDB296000F6B8E /* MainTabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9367F23FDB296000F6B8E /* MainTabBarControllerDelegate.swift */; };
+		F3D9368223FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368123FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift */; };
+		F3D9368423FDB346000F6B8E /* SearchViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368323FDB346000F6B8E /* SearchViewController+UITableViewDelegate.swift */; };
+		F3D9368623FDB380000F6B8E /* SearchViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368523FDB380000F6B8E /* SearchViewController+UISearchBarDelegate.swift */; };
+		F3D9368823FDB3BA000F6B8E /* SearchDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368723FDB3BA000F6B8E /* SearchDisplayLogic.swift */; };
+		F3D9368A23FDB3E2000F6B8E /* SearchViewController+TrackMovingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368923FDB3E2000F6B8E /* SearchViewController+TrackMovingDelegate.swift */; };
+		F3D9368C23FDB423000F6B8E /* TrackMovingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368B23FDB423000F6B8E /* TrackMovingDelegate.swift */; };
+		F3D9368E23FDB451000F6B8E /* TrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9368D23FDB451000F6B8E /* TrackCellViewModel.swift */; };
 		F3DDB74B23FD6B6300E3453D /* CMTime+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DDB74A23FD6B6300E3453D /* CMTime+extension.swift */; };
 		F3DDB74D23FD76E300E3453D /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DDB74C23FD76E300E3453D /* Nib.swift */; };
 		F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD323FBF967003A90F6 /* AppDelegate.swift */; };
 		F3E73BD623FBF967003A90F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */; };
-		F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BD723FBF967003A90F6 /* ViewController.swift */; };
 		F3E73BDD23FBF968003A90F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E73BDC23FBF968003A90F6 /* Assets.xcassets */; };
 		F3E73BE023FBF968003A90F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E73BDE23FBF968003A90F6 /* LaunchScreen.storyboard */; };
 		F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */; };
-		F3E73BEA23FBFBBE003A90F6 /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BE923FBFBBE003A90F6 /* SearchMusicViewController.swift */; };
 		F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F3E73BEE23FC0522003A90F6 /* Alamofire */; };
 		F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */; };
 		F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E73BF423FC0DE7003A90F6 /* Track.swift */; };
@@ -55,17 +61,23 @@
 		F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		F3D9367B23FDAC94000F6B8E /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		F3D9367D23FDB0EB000F6B8E /* LibraryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRowView.swift; sourceTree = "<group>"; };
+		F3D9367F23FDB296000F6B8E /* MainTabBarControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerDelegate.swift; sourceTree = "<group>"; };
+		F3D9368123FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabBarController+MainTabBarControllerDelegate.swift"; sourceTree = "<group>"; };
+		F3D9368323FDB346000F6B8E /* SearchViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		F3D9368523FDB380000F6B8E /* SearchViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		F3D9368723FDB3BA000F6B8E /* SearchDisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDisplayLogic.swift; sourceTree = "<group>"; };
+		F3D9368923FDB3E2000F6B8E /* SearchViewController+TrackMovingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+TrackMovingDelegate.swift"; sourceTree = "<group>"; };
+		F3D9368B23FDB423000F6B8E /* TrackMovingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMovingDelegate.swift; sourceTree = "<group>"; };
+		F3D9368D23FDB451000F6B8E /* TrackCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellViewModel.swift; sourceTree = "<group>"; };
 		F3DDB74A23FD6B6300E3453D /* CMTime+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+extension.swift"; sourceTree = "<group>"; };
 		F3DDB74C23FD76E300E3453D /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		F3E73BD023FBF967003A90F6 /* iAppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E73BD323FBF967003A90F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3E73BD723FBF967003A90F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3E73BDC23FBF968003A90F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3E73BDF23FBF968003A90F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3E73BE123FBF968003A90F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		F3E73BE923FBFBBE003A90F6 /* SearchMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		F3E73BF223FC0DAC003A90F6 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F3E73BF423FC0DE7003A90F6 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		F3E73BF623FC1348003A90F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -101,6 +113,10 @@
 				F32D485C23FC28AE00C388E4 /* Cell */,
 				F32D485723FC194900C388E4 /* SearchViewController.storyboard */,
 				F32D484C23FC184F00C388E4 /* SearchViewController.swift */,
+				F3D9368723FDB3BA000F6B8E /* SearchDisplayLogic.swift */,
+				F3D9368323FDB346000F6B8E /* SearchViewController+UITableViewDelegate.swift */,
+				F3D9368523FDB380000F6B8E /* SearchViewController+UISearchBarDelegate.swift */,
+				F3D9368923FDB3E2000F6B8E /* SearchViewController+TrackMovingDelegate.swift */,
 				F32D484D23FC184F00C388E4 /* SearchInteractor.swift */,
 				F32D484823FC184F00C388E4 /* SearchPresenter.swift */,
 				F32D484923FC184F00C388E4 /* SearchWorker.swift */,
@@ -125,6 +141,7 @@
 			children = (
 				F32D485D23FC28BF00C388E4 /* TrackCell.xib */,
 				F32D485F23FC28D500C388E4 /* TrackCell.swift */,
+				F3D9368D23FDB451000F6B8E /* TrackCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -142,6 +159,7 @@
 			children = (
 				F32EED6523FD4E1400D3C1AE /* TrackDetailView.xib */,
 				F32EED6723FD4E1E00D3C1AE /* TrackDetailView.swift */,
+				F3D9368B23FDB423000F6B8E /* TrackMovingDelegate.swift */,
 			);
 			path = TrackDetailView;
 			sourceTree = "<group>";
@@ -170,10 +188,11 @@
 				F32D485B23FC1B6E00C388E4 /* Helpers */,
 				F32D484723FC17D200C388E4 /* Services */,
 				F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */,
+				F3D9368123FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift */,
+				F3D9367F23FDB296000F6B8E /* MainTabBarControllerDelegate.swift */,
 				F3D9367B23FDAC94000F6B8E /* LibraryView.swift */,
 				F3D9367D23FDB0EB000F6B8E /* LibraryRowView.swift */,
 				F32D485623FC185B00C388E4 /* Search */,
-				F3E73BF123FC0D7D003A90F6 /* Controllers */,
 				F3E73BF023FC0D6A003A90F6 /* Models */,
 				F3E73BDC23FBF968003A90F6 /* Assets.xcassets */,
 				F3E73BDE23FBF968003A90F6 /* LaunchScreen.storyboard */,
@@ -189,15 +208,6 @@
 				F3E73BF423FC0DE7003A90F6 /* Track.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		F3E73BF123FC0D7D003A90F6 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F3E73BE923FBFBBE003A90F6 /* SearchMusicViewController.swift */,
-				F3E73BD723FBF967003A90F6 /* ViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,24 +293,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E73BF323FC0DAC003A90F6 /* SearchResponse.swift in Sources */,
+				F3D9368A23FDB3E2000F6B8E /* SearchViewController+TrackMovingDelegate.swift in Sources */,
 				F3DDB74D23FD76E300E3453D /* Nib.swift in Sources */,
+				F3D9368223FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift in Sources */,
 				F32D485023FC184F00C388E4 /* SearchWorker.swift in Sources */,
+				F3D9368C23FDB423000F6B8E /* TrackMovingDelegate.swift in Sources */,
 				F3D9367E23FDB0EB000F6B8E /* LibraryRowView.swift in Sources */,
 				F32D485123FC184F00C388E4 /* SearchRouter.swift in Sources */,
-				F3E73BEA23FBFBBE003A90F6 /* SearchMusicViewController.swift in Sources */,
 				F32D484F23FC184F00C388E4 /* SearchPresenter.swift in Sources */,
 				F3E73BF723FC1348003A90F6 /* NetworkService.swift in Sources */,
 				F3D9367C23FDAC94000F6B8E /* LibraryView.swift in Sources */,
 				F32D485423FC184F00C388E4 /* SearchInteractor.swift in Sources */,
+				F3D9368623FDB380000F6B8E /* SearchViewController+UISearchBarDelegate.swift in Sources */,
 				F3E73BF523FC0DE7003A90F6 /* Track.swift in Sources */,
 				F3DDB74B23FD6B6300E3453D /* CMTime+extension.swift in Sources */,
 				F32D485A23FC1B6700C388E4 /* UIViewController+Storyboard.swift in Sources */,
+				F3D9368E23FDB451000F6B8E /* TrackCellViewModel.swift in Sources */,
 				F32EED6823FD4E1E00D3C1AE /* TrackDetailView.swift in Sources */,
-				F3E73BD823FBF967003A90F6 /* ViewController.swift in Sources */,
 				F32D485323FC184F00C388E4 /* SearchViewController.swift in Sources */,
+				F3D9368823FDB3BA000F6B8E /* SearchDisplayLogic.swift in Sources */,
 				F3E73BD423FBF967003A90F6 /* AppDelegate.swift in Sources */,
+				F3D9368023FDB296000F6B8E /* MainTabBarControllerDelegate.swift in Sources */,
 				F3E73BE823FBF9D2003A90F6 /* MainTabBarController.swift in Sources */,
 				F3E73BD623FBF967003A90F6 /* SceneDelegate.swift in Sources */,
+				F3D9368423FDB346000F6B8E /* SearchViewController+UITableViewDelegate.swift in Sources */,
 				F32D485223FC184F00C388E4 /* SearchModels.swift in Sources */,
 				F32D486023FC28D500C388E4 /* TrackCell.swift in Sources */,
 				F32EED6323FD473200D3C1AE /* FooterView.swift in Sources */,

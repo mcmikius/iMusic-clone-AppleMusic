@@ -9,18 +9,15 @@
 import UIKit
 import SwiftUI
 
-protocol MainTabBarControllerDelegate: class {
-    func minimizedTrackDetailController()
-    func maximizedTrackDetailController(viewModel: SearchViewModel.Cell?)
-}
+
 
 class MainTabBarController: UITabBarController {
     
     let searchViewController: SearchViewController = SearchViewController.loadFromStoryboard()
     
-    private var minimizedTopAnchorContraint: NSLayoutConstraint!
-    private var maximizedTopAnchorContraint: NSLayoutConstraint!
-    private var bottomAnchorContraint: NSLayoutConstraint!
+    var minimizedTopAnchorContraint: NSLayoutConstraint!
+    var maximizedTopAnchorContraint: NSLayoutConstraint!
+    var bottomAnchorContraint: NSLayoutConstraint!
     let trackDetailView: TrackDetailView = TrackDetailView.loadFromNib()
     
     override func viewDidLoad() {
@@ -72,36 +69,4 @@ class MainTabBarController: UITabBarController {
     }
 }
 
-extension MainTabBarController: MainTabBarControllerDelegate {
-    
-    func maximizedTrackDetailController(viewModel: SearchViewModel.Cell?) {
-        minimizedTopAnchorContraint.isActive = false
-        maximizedTopAnchorContraint.isActive = true
-        maximizedTopAnchorContraint.constant = 0
-        bottomAnchorContraint.constant = 0
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            self.view.layoutIfNeeded()
-            self.tabBar.alpha = 0
-            self.trackDetailView.miniTrackView.alpha = 0
-            self.trackDetailView.maximizedStackView.alpha = 1
-        }, completion: nil)
-        guard let viewModel = viewModel else {
-            return
-        }
-        self.trackDetailView.set(viewModel: viewModel)
-    }
-    
-    func minimizedTrackDetailController() {
-        maximizedTopAnchorContraint.isActive = false
-        bottomAnchorContraint.constant = view.frame.height
-        minimizedTopAnchorContraint.isActive = true
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            self.view.layoutIfNeeded()
-            self.tabBar.alpha = 1
-            self.trackDetailView.miniTrackView.alpha = 1
-            self.trackDetailView.maximizedStackView.alpha = 0
-        }, completion: nil)
-    }
-    
-    
-}
+

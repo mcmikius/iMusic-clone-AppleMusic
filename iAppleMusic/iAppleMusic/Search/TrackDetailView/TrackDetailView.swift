@@ -10,10 +10,7 @@ import UIKit
 import SDWebImage
 import AVKit
 
-protocol TrackMovingDelegate: class {
-    func moveBackForPreviousTrack() -> SearchViewModel.Cell?
-    func moveForwardForPreviousTrack() -> SearchViewModel.Cell?
-}
+
 
 class TrackDetailView: UIView {
     
