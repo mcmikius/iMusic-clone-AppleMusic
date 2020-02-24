@@ -7,14 +7,19 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct LibraryRowView: View {
+    var cell: SearchViewModel.Cell
     var body: some View {
         HStack {
-            Image("pic0").resizable().scaledToFit().frame(width: 60, height: 60).cornerRadius(2)
+            URLImage(URL(string: cell.iconUrlString ?? "")!) { (proxy) in
+                proxy.image.resizable().scaledToFit().cornerRadius(2)
+            }.frame(width: 60, height: 60)
+//            URLImage(URL(string: cell.iconUrlString ?? "")!).resizable().scaledToFit().frame(width: 60, height: 60).cornerRadius(2)
             VStack(alignment:.leading) {
-                Text("Track Title")
-                Text("Artist")
+                Text("\(cell.trackName)")
+                Text("\(cell.artistName)")
             }
         }
     }
@@ -22,6 +27,6 @@ struct LibraryRowView: View {
 
 struct LibraryRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryRowView()
+        LibraryRowView(cell: .init(iconUrlString: "", trackName: "Some track", artistName: "some artist", collectionName: "", previewUrl: ""))
     }
 }

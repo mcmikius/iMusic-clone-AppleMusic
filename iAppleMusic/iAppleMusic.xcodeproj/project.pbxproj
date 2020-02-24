@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F316AB7024044D9900AEB69E /* UserDefaults+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316AB6F24044D9900AEB69E /* UserDefaults+extension.swift */; };
+		F316AB732404529900AEB69E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F316AB722404529900AEB69E /* URLImage */; };
 		F32B634023FC30730096385A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F32B633F23FC30730096385A /* SDWebImage */; };
 		F32B634223FC30730096385A /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F32B634123FC30730096385A /* SDWebImageMapKit */; };
 		F32D484F23FC184F00C388E4 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D484823FC184F00C388E4 /* SearchPresenter.swift */; };
@@ -46,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F316AB6F24044D9900AEB69E /* UserDefaults+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extension.swift"; sourceTree = "<group>"; };
 		F32D484823FC184F00C388E4 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		F32D484923FC184F00C388E4 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		F32D484A23FC184F00C388E4 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			files = (
 				F32B634023FC30730096385A /* SDWebImage in Frameworks */,
 				F32B634223FC30730096385A /* SDWebImageMapKit in Frameworks */,
+				F316AB732404529900AEB69E /* URLImage in Frameworks */,
 				F3E73BEF23FC0522003A90F6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +136,7 @@
 				F32D485923FC1B6700C388E4 /* UIViewController+Storyboard.swift */,
 				F3DDB74A23FD6B6300E3453D /* CMTime+extension.swift */,
 				F3DDB74C23FD76E300E3453D /* Nib.swift */,
+				F316AB6F24044D9900AEB69E /* UserDefaults+extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				F3E73BEE23FC0522003A90F6 /* Alamofire */,
 				F32B633F23FC30730096385A /* SDWebImage */,
 				F32B634123FC30730096385A /* SDWebImageMapKit */,
+				F316AB722404529900AEB69E /* URLImage */,
 			);
 			productName = iAppleMusic;
 			productReference = F3E73BD023FBF967003A90F6 /* iAppleMusic.app */;
@@ -262,6 +268,7 @@
 			packageReferences = (
 				F3E73BED23FC0522003A90F6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				F316AB712404529900AEB69E /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = F3E73BD123FBF967003A90F6 /* Products */;
 			projectDirPath = "";
@@ -297,6 +304,7 @@
 				F3DDB74D23FD76E300E3453D /* Nib.swift in Sources */,
 				F3D9368223FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift in Sources */,
 				F32D485023FC184F00C388E4 /* SearchWorker.swift in Sources */,
+				F316AB7024044D9900AEB69E /* UserDefaults+extension.swift in Sources */,
 				F3D9368C23FDB423000F6B8E /* TrackMovingDelegate.swift in Sources */,
 				F3D9367E23FDB0EB000F6B8E /* LibraryRowView.swift in Sources */,
 				F32D485123FC184F00C388E4 /* SearchRouter.swift in Sources */,
@@ -511,6 +519,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F316AB712404529900AEB69E /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
 		F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -530,6 +546,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F316AB722404529900AEB69E /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F316AB712404529900AEB69E /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
 		F32B633F23FC30730096385A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F32B633E23FC30730096385A /* XCRemoteSwiftPackageReference "SDWebImage" */;

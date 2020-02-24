@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LibraryView: View {
+    var tracks = UserDefaults.standard.savedTracks()
     var body: some View {
         NavigationView {
             VStack {
@@ -27,8 +28,8 @@ struct LibraryView: View {
                     }
                 }.padding().frame(height: 50)
                 Divider().padding(.leading).padding(.trailing)
-                List{
-                    LibraryRowView()
+                List(tracks) { track in
+                    LibraryRowView(cell: track)
                 }
             }
             .navigationBarTitle("Library")
