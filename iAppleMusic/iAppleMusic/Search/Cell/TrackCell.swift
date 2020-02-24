@@ -20,6 +20,8 @@ class TrackCell: UITableViewCell {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
     
+    var cell: SearchViewModel.Cell?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -29,7 +31,8 @@ class TrackCell: UITableViewCell {
         trackImageView.image = nil
     }
     
-    func set(viewModel: TrackCellViewModel) {
+    func set(viewModel: SearchViewModel.Cell) {
+        self.cell = viewModel
         trackNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         collectionNameLabel.text = viewModel.collectionName
@@ -40,17 +43,22 @@ class TrackCell: UITableViewCell {
     }
     
     @IBAction func addTrackAction(_ sender: UIButton) {
+        
         let userDefaults = UserDefaults.standard
-        userDefaults.set(25, forKey: "Age")
-        userDefaults.set("Hello", forKey: "String")
+//        userDefaults.set(25, forKey: "Age")
+//        userDefaults.set("Hello", forKey: "String")
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: SearchViewModel.Cell.self, requiringSecureCoding: false) {
+            userDefaults.set(savedData, forKey: "tracks")
+        }
     }
     
     @IBAction func showInfoAction(_ sender: UIButton) {
         let userDefaults = UserDefaults.standard
-        let age = userDefaults.integer(forKey: "Age")
-        let word = userDefaults.object(forKey: "String") as? String
-        print("age: \(age)")
-        print("string: \(String(describing: word))")
+        if let savedTrack = userDefaults.object(forKey: "tracks") as? Data {
+            if let decodedTrack = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as? SearchViewModel.Cell {
+                print("decodedTrack.trackName: \(decodedTrack.trackName)")
+            }
+        }
     }
     
 }
