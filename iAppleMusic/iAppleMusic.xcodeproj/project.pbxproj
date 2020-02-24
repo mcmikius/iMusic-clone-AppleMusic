@@ -101,6 +101,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F316AB7424045D5600AEB69E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				F3D9367B23FDAC94000F6B8E /* LibraryView.swift */,
+				F3D9367D23FDB0EB000F6B8E /* LibraryRowView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		F316AB772404602D00AEB69E /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */,
+				F3D9368123FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift */,
+				F3D9367F23FDB296000F6B8E /* MainTabBarControllerDelegate.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
 		F32D484723FC17D200C388E4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,11 +211,8 @@
 				F3E73BD523FBF967003A90F6 /* SceneDelegate.swift */,
 				F32D485B23FC1B6E00C388E4 /* Helpers */,
 				F32D484723FC17D200C388E4 /* Services */,
-				F3E73BE723FBF9D2003A90F6 /* MainTabBarController.swift */,
-				F3D9368123FDB2CB000F6B8E /* MainTabBarController+MainTabBarControllerDelegate.swift */,
-				F3D9367F23FDB296000F6B8E /* MainTabBarControllerDelegate.swift */,
-				F3D9367B23FDAC94000F6B8E /* LibraryView.swift */,
-				F3D9367D23FDB0EB000F6B8E /* LibraryRowView.swift */,
+				F316AB772404602D00AEB69E /* MainTabBarController */,
+				F316AB7424045D5600AEB69E /* Library */,
 				F32D485623FC185B00C388E4 /* Search */,
 				F3E73BF023FC0D6A003A90F6 /* Models */,
 				F3E73BDC23FBF968003A90F6 /* Assets.xcassets */,
