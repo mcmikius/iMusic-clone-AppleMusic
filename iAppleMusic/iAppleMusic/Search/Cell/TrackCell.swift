@@ -47,7 +47,7 @@ class TrackCell: UITableViewCell {
         let userDefaults = UserDefaults.standard
 //        userDefaults.set(25, forKey: "Age")
 //        userDefaults.set("Hello", forKey: "String")
-        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: SearchViewModel.Cell.self, requiringSecureCoding: false) {
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: cell!, requiringSecureCoding: false) {
             userDefaults.set(savedData, forKey: "tracks")
         }
     }
