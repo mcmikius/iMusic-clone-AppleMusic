@@ -38,4 +38,16 @@ class TrackCell: UITableViewCell {
         }
         trackImageView.sd_setImage(with: url, completed: nil)
     }
+    
+    @IBAction func addTrackAction(_ sender: UIButton) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(25, forKey: "Age")
+    }
+    
+    @IBAction func showInfoAction(_ sender: UIButton) {
+        let userDefaults = UserDefaults.standard
+        let age = userDefaults.integer(forKey: "Age")
+        print("age: \(age)")
+    }
+    
 }
