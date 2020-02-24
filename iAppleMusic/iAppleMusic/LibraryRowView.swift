@@ -16,7 +16,6 @@ struct LibraryRowView: View {
             URLImage(URL(string: cell.iconUrlString ?? "")!) { (proxy) in
                 proxy.image.resizable().scaledToFit().cornerRadius(2)
             }.frame(width: 60, height: 60)
-//            URLImage(URL(string: cell.iconUrlString ?? "")!).resizable().scaledToFit().frame(width: 60, height: 60).cornerRadius(2)
             VStack(alignment:.leading) {
                 Text("\(cell.trackName)")
                 Text("\(cell.artistName)")

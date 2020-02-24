@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LibraryView: View {
-    var tracks = UserDefaults.standard.savedTracks()
+    @State var tracks = UserDefaults.standard.savedTracks()
     var body: some View {
         NavigationView {
             VStack {
@@ -28,11 +28,20 @@ struct LibraryView: View {
                     }
                 }.padding().frame(height: 50)
                 Divider().padding(.leading).padding(.trailing)
-                List(tracks) { track in
-                    LibraryRowView(cell: track)
+                List {
+                    ForEach(tracks) { track in
+                        LibraryRowView(cell: track)
+                    }.onDelete(perform: delete)
                 }
-            }
-            .navigationBarTitle("Library")
+            }.navigationBarTitle("Library")
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        tracks.remove(atOffsets: offsets)
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
         }
     }
 }
