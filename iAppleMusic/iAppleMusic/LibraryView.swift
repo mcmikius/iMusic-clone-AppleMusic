@@ -9,19 +9,25 @@
 import SwiftUI
 
 struct LibraryView: View {
+    
     @State var tracks = UserDefaults.standard.savedTracks()
+    @State private var showingAlert: Bool = false
+    @State private var track: SearchViewModel.Cell!
+    var tabBarDelegate: MainTabBarControllerDelegate?
+    
     var body: some View {
         NavigationView {
             VStack {
                 GeometryReader { geometry in
                     HStack(spacing: 20) {
                         Button(action: {
-                            
+                            self.track = self.tracks[0]
+                            self.tabBarDelegate?.maximizedTrackDetailController(viewModel: self.track)
                         }) {
                             Image(systemName: "play.fill").frame(width: geometry.size.width / 2 - 10, height: 50).accentColor(Color(UIColor.systemPink)).background(Color(UIColor.systemGroupedBackground)).cornerRadius(10)
                         }
                         Button(action: {
-                            
+                            self.tracks = UserDefaults.standard.savedTracks()
                         }) {
                             Image(systemName: "arrow.2.circlepath").frame(width: geometry.size.width / 2 - 10, height: 50).accentColor(Color(UIColor.systemPink)).background(Color(UIColor.systemGroupedBackground)).cornerRadius(10)
                         }
@@ -30,15 +36,36 @@ struct LibraryView: View {
                 Divider().padding(.leading).padding(.trailing)
                 List {
                     ForEach(tracks) { track in
-                        LibraryRowView(cell: track)
+                        LibraryRowView(cell: track).gesture(LongPressGesture().onEnded{ _ in
+                            self.track = track
+                            self.showingAlert = true
+                        }.simultaneously(with: TapGesture().onEnded{ _ in
+                            self.track = track
+                            self.tabBarDelegate?.maximizedTrackDetailController(viewModel: self.track)
+                        }))
                     }.onDelete(perform: delete)
                 }
-            }.navigationBarTitle("Library")
+            }.actionSheet(isPresented: $showingAlert, content: { ActionSheet(title: Text("Are you sure you want to delete this track?"), buttons: [.destructive(Text("Delete"), action: {
+                self.delete(track: self.track)
+            }), .cancel()])
+            }).navigationBarTitle("Library")
         }
     }
     
     func delete(at offsets: IndexSet) {
         tracks.remove(atOffsets: offsets)
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
+        }
+    }
+    
+    func delete(track: SearchViewModel.Cell) {
+        let index = tracks.firstIndex(of: track)
+        guard let myIndex = index else {
+            return
+        }
+        tracks.remove(at: myIndex)
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
             let userDefaults = UserDefaults.standard
             userDefaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
