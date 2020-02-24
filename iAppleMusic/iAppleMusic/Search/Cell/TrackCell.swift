@@ -42,12 +42,15 @@ class TrackCell: UITableViewCell {
     @IBAction func addTrackAction(_ sender: UIButton) {
         let userDefaults = UserDefaults.standard
         userDefaults.set(25, forKey: "Age")
+        userDefaults.set("Hello", forKey: "String")
     }
     
     @IBAction func showInfoAction(_ sender: UIButton) {
         let userDefaults = UserDefaults.standard
         let age = userDefaults.integer(forKey: "Age")
+        let word = userDefaults.object(forKey: "String") as? String
         print("age: \(age)")
+        print("string: \(String(describing: word))")
     }
     
 }
